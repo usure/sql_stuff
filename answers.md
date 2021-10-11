@@ -9,26 +9,52 @@ Find the title of each film
 SELECT titleFROM movies;
 ```
 
-Find the director of each film 
 ### Question 2
+Find the director of each film 
 ```sql
 SELECT director FROM movies;
 ```
 
-Find the title and director of each film 
 ### Question 3
+Find the title and director of each film 
 ```sql
 SELECT title, director FROM movies;
 ```
 
-Find the title and year of each film 
 ### Question 4
+Find the title and year of each film 
 ```sql
 SELECT title, year FROM movies;
 ```
 
-Find all the information about each film
 ### Question 5
+Find all the information about each film
 ```sql
 SELECT * FROM movies;
+```
+
+## Lesson 2: Queries with constraints (Pt. 1)
+
+### Question 1
+Find the movie with a row id of 6
+```sql
+SELECT * FROM movies WHERE id = 6;
+```
+
+### Question 2
+Find the movies released in the years between 2000 and 2010 
+```sql
+SELECT * FROM movies WHERE year between 2000 and 2010;
+```
+
+### Question 3
+Find the movies not released in the years between 2000 and 2010
+```sql
+SELECT * FROM movies WHERE year NOT BETWEEN 2000 AND 2010;
+```
+
+### Question 4
+Find the first 5 Pixar movies and their release year
+```sql
+SELECT * FROM movies WHERE id BETWEEN 1 AND 5;
 ```
