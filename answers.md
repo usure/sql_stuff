@@ -84,3 +84,61 @@ Find all the WALL-* movies
 ```sql
 SELECT * FROM movies WHERE title LIKE "%Wall-%";
 ```
+
+## Lesson 4: Filtering and sorting Query results
+
+### Question 1
+List all directors of Pixar movies (alphabetically), without duplicates 
+```sql
+SELECT DISTINCT director FROM movies ORDER BY director ASC;
+```
+
+### Question 2
+List the last four Pixar movies released (ordered from most recent to least) 
+```sql
+SELECT * FROM movies ORDER BY year DESC LIMIT 4;
+```
+
+### Question 3
+List the first five Pixar movies sorted alphabetically 
+```sql
+SELECT * FROM movies ORDER BY title ASC LIMIT 5;
+```
+
+### Question 4
+List the next five Pixar movies sorted alphabetically 
+```sql
+SELECT * FROM movies ORDER BY title LIMIT 5 OFFSET 5;
+```
+
+## SQL Review: Simple SELECT Queries
+
+### Question 1
+List all the Canadian cities and their populations
+```sql
+SELECT City, Population FROM north_american_cities WHERE country = "Canada";
+```
+
+### Question 2
+Order all the cities in the United States by their latitude from north to south
+```sql
+SELECT * FROM north_american_cities WHERE country = "United States" ORDER by Latitude DESC;
+```
+
+### Question 3
+List all the cities west of Chicago, ordered from west to east
+```sql
+SELECT * FROM north_american_cities WHERE -87.629798 > Longitude ORDER BY Longitude ASC;
+```
+
+### Question 4
+List the two largest cities in Mexico (by population) 
+```sql
+SELECT * FROM north_american_cities WHERE country = "Mexico" ORDER BY population DESC LIMIT 2;
+```
+
+### Question 5
+List the third and fourth largest cities (by population) in the United States and their population
+```sql
+SELECT * FROM north_american_cities WHERE country = "United States" ORDER BY population DESC LIMIT 2 OFFSET 2;
+```
